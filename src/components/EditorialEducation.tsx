@@ -21,9 +21,9 @@ export const EditorialEducation: React.FC = () => {
           </span>
         </div>
 
-        {/* Compact Education List */}
+        {/* Compact Education List - Timeline Removed */}
         <div className="space-y-3">
-          {educationData.map((edu, idx) => (
+          {educationData.map((edu) => (
             <div
               key={edu.institution}
               className="p-4 sm:p-5 rounded-2xl bg-white/80 dark:bg-[#121215]/80 shadow-xs space-y-2"
@@ -39,9 +39,6 @@ export const EditorialEducation: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-0.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] text-[#6e6d65] dark:text-[#a1a1aa]">
-                    {edu.period}
-                  </span>
                   <span className="px-2.5 py-0.5 rounded-xl bg-[#141413] dark:bg-[#f4f4f5] text-[#faf9f5] dark:text-[#09090b] font-bold">
                     {edu.gpaOrScore}
                   </span>
