@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
-import { person, projects, experience, skillGroups, certifications, education, qa, resumeMarkdown } from "../../data/resume";
+import { person, projects, experience, certifications, education, qa, resumeMarkdown } from "../../data/resume";
 import { useSite, copyText, GridLines } from "../../site-context";
+import { SkillsMarquee, DiagramViewer } from "./Media";
 
 export const Projects: React.FC = () => (
   <div className="lined">
@@ -92,6 +93,7 @@ export const CaseStudy: React.FC = () => {
           <div><div className="mono muted" style={{ fontSize: 12, marginBottom: 10 }}>Approach</div><p>A Python engine over Windows ETW and Linux telemetry, with single-event, sequence, threshold and statistical (C2 beaconing) rules, correlated on a temporal process-provenance graph.</p></div>
           <div><div className="mono muted" style={{ fontSize: 12, marginBottom: 10 }}>Result</div><p>The full chain surfaces as one incident, with explainable alerts and recommended containment. Validated with 409 automated tests and attack replays.</p></div>
         </div>
+        <DiagramViewer />
         <div className="tile" style={{ gap: 18 }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
             <div style={{ fontWeight: 700, fontSize: 18 }}>Watch one chain become one incident</div>
@@ -130,9 +132,6 @@ export const CaseStudy: React.FC = () => {
 };
 
 export const About: React.FC = () => {
-  const groups = ["All", ...Object.keys(skillGroups)];
-  const [filter, setFilter] = useState("All");
-  const skills = filter === "All" ? Object.values(skillGroups).flat() : skillGroups[filter];
   const [ask, setAsk] = useState(-1);
   return (
     <div className="lined">
@@ -151,14 +150,7 @@ export const About: React.FC = () => {
           ))}
         </section>
 
-        <section aria-labelledby="skills-title" className="stack" style={{ gap: 20 }}>
-          <div className="eyebrow">05 · Stack</div>
-          <h2 id="skills-title" className="h2">Skills</h2>
-          <div className="chips" role="group" aria-label="Filter skills">
-            {groups.map((g) => <button key={g} type="button" className="filter" aria-pressed={g === filter} onClick={() => setFilter(g)}>{g}</button>)}
-          </div>
-          <div className="chips" key={filter}>{skills.map((s) => <span className="chip" key={s}>{s}</span>)}</div>
-        </section>
+        <SkillsMarquee />
 
         <section aria-labelledby="cert-title" className="stack" style={{ gap: 20 }}>
           <div className="eyebrow">06 · Credentials</div>
