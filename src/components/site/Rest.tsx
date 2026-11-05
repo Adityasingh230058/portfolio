@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { person, projects, experience, certifications, education, qa, resumeMarkdown } from "../../data/resume";
 import { useSite, copyText, GridLines } from "../../site-context";
-import { SkillsMarquee, DiagramViewer } from "./Media";
+import { SkillsMarquee } from "./Media";
 
 export const Projects: React.FC = () => (
   <div className="lined">
@@ -93,7 +93,6 @@ export const CaseStudy: React.FC = () => {
           <div><div className="mono muted" style={{ fontSize: 12, marginBottom: 10 }}>Approach</div><p>A Python engine over Windows ETW and Linux telemetry, with single-event, sequence, threshold and statistical (C2 beaconing) rules, correlated on a temporal process-provenance graph.</p></div>
           <div><div className="mono muted" style={{ fontSize: 12, marginBottom: 10 }}>Result</div><p>The full chain surfaces as one incident, with explainable alerts and recommended containment. Validated with 409 automated tests and attack replays.</p></div>
         </div>
-        <DiagramViewer />
         <div className="tile" style={{ gap: 18 }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
             <div style={{ fontWeight: 700, fontSize: 18 }}>Watch one chain become one incident</div>

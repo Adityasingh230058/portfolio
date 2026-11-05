@@ -206,13 +206,3 @@ button { font-family: inherit; }
 @keyframes marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (max-width: 760px) { .mq-row { grid-template-columns: 1fr; gap: 8px; } }
 @media (prefers-reduced-motion: reduce) { .mq-track { width: auto; } .mq-set { flex-wrap: wrap; } .mq-set.dup { display: none; } .mq-viewport { -webkit-mask-image: none; mask-image: none; } }
-
-/* diagram viewer */
-.seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 999px; border: 1px solid var(--ink-line2); }
-.seg button { height: 40px; padding: 0 16px; border-radius: 999px; border: none; background: transparent; color: var(--ink-fg); font-size: 14px; font-weight: 600; cursor: pointer; }
-.seg button[aria-selected="true"] { background: var(--ink-fg); color: var(--ink-deep); }
-.diagram-frame { max-width: 980px; width: 100%; margin: 0 auto; border-radius: 18px; background: #f5f5f5; padding: clamp(8px, 2vw, 20px); border: 1px solid var(--ink-line); }
-.diagram-btn { display: block; width: 100%; padding: 0; border: none; background: none; cursor: zoom-in; border-radius: 10px; }
-.diagram-btn img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; border-radius: 10px; animation: rise .3s ease-out; }
-.lightbox { position: fixed; inset: 0; z-index: 120; background: rgba(5, 5, 6, .92); display: flex; align-items: center; justify-content: center; padding: 24px 24px 80px; cursor: zoom-out; }
-.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 12px; background: #f5f5f5; cursor: default; }
